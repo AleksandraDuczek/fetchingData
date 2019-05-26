@@ -91,7 +91,7 @@ function sortData() {
     });
     //display of titles
     for (let m = 0; m < filtered.length; m++) {
-        var content = document.createTextNode(m + ") " + (titleFrom24h[Object.keys(titleFrom24h)[m]]) + " ");
+        var content = document.createTextNode((m+1) + ") " + (titleFrom24h[Object.keys(titleFrom24h)[m]]) + " ");
         element.appendChild(content);
     }
 
