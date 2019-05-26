@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="http://simpleicon.com/wp-content/uploads/pencil.png">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetching</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <div class="hero__image">
+            </div>
+        </div>
+    </div>
+    </br>
+
+    <hr>
+    <div id="introduction"> Data downloaded from <a href="https://www.reddit.com/r/funny.json" target="_blank" style="text-decoration: none; color: 	#505050"> https://www.reddit.com/r/funny.json </a> represent the title of the posts, along with the number of positive and negative
+        votes, score, number of comments and date the post was created.
+        </br>
+        </br> Press the button to sort each one of them.
+        <hr>
+    </div>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th><button id="title" onclick="sortByField('title')"> Title </button> </th>
+                <th><button id="ups" onclick="sortByField('ups')"> Upvotes </button> </th>
+                <th><button id="downs" onclick="sortByField('downs')"> Downvotes </button> </th>
+                <th><button id="score" onclick="sortByField('score')"> Score </button> </th>
+                <th><button id="num_comments" onclick="sortByField('num_comments')"> Comments </button> </th>
+                <th><button id="created" onclick="sortByField('created')"> Created </button> </th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    </br>
+    </br>
+
+    <div id="container">
+        <div class="b1"><button id="butt" onclick="getBest()"> Title of the best post </button></div>
+        <div class="b2"><button id="butt2" onclick="sortData()"> Show the posts from 24h </button></div>
+    </div>
+
+    <div id="container2">
+        <div id="sort"> </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div>
+            <a href="https://github.com/AleksandraDuczek" target="_blank" style="text-decoration: none; color: gray">Github</a>
+        </div>
+        <div>
+            <a>Aleksandra Duczek</a>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
