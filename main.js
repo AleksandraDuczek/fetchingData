@@ -57,6 +57,7 @@ function getBest() {
             score[i] = children[Object.keys(children)[i]].data.ups;
         }
     }
+
     var maxOfArray = Math.max.apply(Math, score);
     for (let i = 0; i < children.length; i++) {
         if (children[Object.keys(children)[i]].data.downs != 0 && (children[Object.keys(children)[i]].data.ups * children[Object.keys(children)[i]].data.downs) == maxOfArray) {
@@ -65,6 +66,7 @@ function getBest() {
             document.getElementById('sort').innerHTML = children[Object.keys(children)[i]].data.title;
         }
     }
+
 }
 
 
@@ -83,7 +85,10 @@ function sortData() {
         }
     }
 
-    const element = document.getElementById("sort");
+    const oldElement = document.getElementById("sort");
+    const newElement = document.createElement('sort');
+    newElement.setAttribute('id', 'sort');
+
 
     //remove zeros from array
     var filtered = rightDate.filter(function(el) {
@@ -91,9 +96,11 @@ function sortData() {
     });
     //display of titles
     for (let m = 0; m < filtered.length; m++) {
-        var content = document.createTextNode((m+1) + ") " + '"' + (titleFrom24h[Object.keys(titleFrom24h)[m]]) + '"'+ " ");
-        element.appendChild(content);
+        var content = document.createTextNode(m + 1 + ") " + (titleFrom24h[Object.keys(titleFrom24h)[m]]) + " ");
+        newElement.appendChild(content);
     }
+
+    oldElement.parentNode.replaceChild(newElement, oldElement);
 
 }
 
